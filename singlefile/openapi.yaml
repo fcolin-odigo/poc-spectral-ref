@@ -1,0 +1,418 @@
+openapi: 3.0.3
+components:
+  parameters:
+    SampleId:
+      name: id
+      in: path
+      required: true
+      description: Sample ID
+      schema:
+        type: number
+        format: int64
+    tenantIdPathParam:
+      name: tenantId
+      in: path
+      required: true
+      description: Functional identifier of the current tenant
+      schema:
+        type: string
+        pattern: '^[a-z]{3}[a-z0-9]{5}$'
+        example: 'dev7a3bw'
+        description: >-
+          The tenant ID should be a 8-character random value following this REGEX pattern: `^[a-z]{3}[a-z0-9]{5}$`.
+          See https://odigo.atlassian.net/wiki/spaces/OCC/pages/4343267994/6.0+Which+tenant+ID+format+would+be+more+appropriate
+          for details.
+          **Note:** pattern _may_ be not respected on dev or test environments, it _should_ be OK on QA and runtime ones.
+  responses:
+    InvalidRequest:
+      description: Invalid request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorSchema'
+  schemas:
+    idProperty:
+      type: string
+      format: uuid
+      description: Object ID
+      example: 5ed32d90-f210-4051-ad27-9ce08f13c737
+    ErrorSchema:
+      type: object
+      description: Error object
+      required:
+        - code
+      properties:
+        code:
+          type: string
+          minLength: 1
+          description: Unique error code
+          example: ABC-123
+        message:
+          type: string
+          description: Additional error message
+    SampleSchema:
+      type: object
+      description: Sample object
+      required:
+        - id
+      properties:
+        id:
+          $ref: '#/components/schemas/idProperty'
+        value:
+          type: string
+          minLength: 1
+          description: Sample value
+          example: 'Something'
+        subObjects:
+          type: integer
+          items:
+            $ref: '#/components/schemas/SubObject'
+        subObjects2:
+          type: integer
+          items:
+            $ref: '#/components/schemas/SubObject'
+        subObjects3:
+          type: integer
+          items:
+            $ref: '#/components/schemas/SubObject'
+        subObjects4:
+          type: integer
+          items:
+            $ref: '#/components/schemas/SubObject'
+        subObjects5:
+          type: integer
+          items:
+            $ref: '#/components/schemas/SubObject'
+        subObjects6:
+          type: integer
+          items:
+            $ref: '#/components/schemas/SubObject'
+    SampleSchema2:
+      type: object
+      description: Sample object
+      required:
+        - id
+      properties:
+        id:
+          $ref: '#/components/schemas/idProperty'
+        value:
+          type: string
+          minLength: 1
+          description: Sample value
+          example: 'Something'
+        subObjects:
+          type: integer
+          items:
+            $ref: '#/components/schemas/SubObject'
+        subObjects2:
+          type: integer
+          items:
+            $ref: '#/components/schemas/SubObject'
+        subObjects3:
+          type: integer
+          items:
+            $ref: '#/components/schemas/SubObject'
+        subObjects4:
+          type: integer
+          items:
+            $ref: '#/components/schemas/SubObject'
+        subObjects5:
+          type: integer
+          items:
+            $ref: '#/components/schemas/SubObject'
+        subObjects6:
+          type: integer
+          items:
+            $ref: '#/components/schemas/SubObject'
+    SampleSchema3:
+      type: object
+      description: Sample object
+      required:
+        - id
+      properties:
+        id:
+          $ref: '#/components/schemas/idProperty'
+        value:
+          type: string
+          minLength: 1
+          description: Sample value
+          example: 'Something'
+        subObjects:
+          type: integer
+          items:
+            $ref: '#/components/schemas/SubObject'
+        subObjects2:
+          type: integer
+          items:
+            $ref: '#/components/schemas/SubObject'
+        subObjects3:
+          type: integer
+          items:
+            $ref: '#/components/schemas/SubObject'
+        subObjects4:
+          type: integer
+          items:
+            $ref: '#/components/schemas/SubObject'
+        subObjects5:
+          type: integer
+          items:
+            $ref: '#/components/schemas/SubObject'
+        subObjects6:
+          type: integer
+          items:
+            $ref: '#/components/schemas/SubObject'
+    SampleSchema4:
+      type: object
+      description: Sample object
+      required:
+        - id
+      properties:
+        id:
+          $ref: '#/components/schemas/idProperty'
+        value:
+          type: string
+          minLength: 1
+          description: Sample value
+          example: 'Something'
+        subObjects:
+          type: integer
+          items:
+            $ref: '#/components/schemas/SubObject'
+        subObjects2:
+          type: integer
+          items:
+            $ref: '#/components/schemas/SubObject'
+        subObjects3:
+          type: integer
+          items:
+            $ref: '#/components/schemas/SubObject'
+        subObjects4:
+          type: integer
+          items:
+            $ref: '#/components/schemas/SubObject'
+        subObjects5:
+          type: integer
+          items:
+            $ref: '#/components/schemas/SubObject'
+        subObjects6:
+          type: integer
+          items:
+            $ref: '#/components/schemas/SubObject'
+    SampleSchema5:
+      type: object
+      description: Sample object
+      required:
+        - id
+      properties:
+        id:
+          $ref: '#/components/schemas/idProperty'
+        value:
+          type: string
+          minLength: 1
+          description: Sample value
+          example: 'Something'
+        subObjects:
+          type: integer
+          items:
+            $ref: '#/components/schemas/SubObject'
+        subObjects2:
+          type: integer
+          items:
+            $ref: '#/components/schemas/SubObject'
+        subObjects3:
+          type: integer
+          items:
+            $ref: '#/components/schemas/SubObject'
+        subObjects4:
+          type: integer
+          items:
+            $ref: '#/components/schemas/SubObject'
+        subObjects5:
+          type: integer
+          items:
+            $ref: '#/components/schemas/SubObject'
+        subObjects6:
+          type: integer
+          items:
+            $ref: '#/components/schemas/SubObject'
+    SampleSchema6:
+      type: object
+      description: Sample object
+      required:
+        - id
+      properties:
+        id:
+          $ref: '#/components/schemas/idProperty'
+        value:
+          type: string
+          minLength: 1
+          description: Sample value
+          example: 'Something'
+        subObjects:
+          type: integer
+          items:
+            $ref: '#/components/schemas/SubObject'
+        subObjects2:
+          type: integer
+          items:
+            $ref: '#/components/schemas/SubObject'
+        subObjects3:
+          type: integer
+          items:
+            $ref: '#/components/schemas/SubObject'
+        subObjects4:
+          type: integer
+          items:
+            $ref: '#/components/schemas/SubObject'
+        subObjects5:
+          type: integer
+          items:
+            $ref: '#/components/schemas/SubObject'
+        subObjects6:
+          type: integer
+          items:
+            $ref: '#/components/schemas/SubObject'
+    SubObject:
+      type: object
+      description: Sub-object
+      required:
+        - id
+        - weight
+      properties:
+        id:
+          $ref: '#/components/schemas/idProperty'
+        weight:
+          type: integer
+          format: int32
+          description: Object weight
+          minimum: 1
+          maximum: 1000
+          example: 42
+        comment:
+          type: string
+          description: Comment
+info:
+  title: Sample API
+  description: PoC of $ref problem with Spectral
+  version: '1.0.0'
+  contact:
+    name: Sample contact
+    email: sample@example.com
+paths:
+  /tenants/{tenantId}/sample/{id}:
+    get:
+      tags:
+        - Sample
+      operationId: getSample
+      description: A sample path
+      parameters:
+        - $ref: '#/components/parameters/tenantIdPathParam'
+        - $ref: '#/components/parameters/SampleId'
+      responses:
+        '200':
+          description: Successful sample
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SampleSchema'
+        '400':
+          $ref: '#/components/responses/InvalidRequest'
+      summary: Sample endpoint
+  /tenants/{tenantId}/sample2/{id}:
+    get:
+      tags:
+        - Sample
+      operationId: getSample2
+      description: A sample path
+      parameters:
+        - $ref: '#/components/parameters/tenantIdPathParam'
+        - $ref: '#/components/parameters/SampleId'
+      responses:
+        '200':
+          description: Successful sample
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SampleSchema2'
+        '400':
+          $ref: '#/components/responses/InvalidRequest'
+      summary: Sample endpoint
+  /tenants/{tenantId}/sample3/{id}:
+    get:
+      tags:
+        - Sample
+      operationId: getSample3
+      description: A sample path
+      parameters:
+        - $ref: '#/components/parameters/tenantIdPathParam'
+        - $ref: '#/components/parameters/SampleId'
+      responses:
+        '200':
+          description: Successful sample
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SampleSchema3'
+        '400':
+          $ref: '#/components/responses/InvalidRequest'
+      summary: Sample endpoint
+  /tenants/{tenantId}/sample4/{id}:
+    get:
+      tags:
+        - Sample
+      operationId: getSample4
+      description: A sample path
+      parameters:
+        - $ref: '#/components/parameters/tenantIdPathParam'
+        - $ref: '#/components/parameters/SampleId'
+      responses:
+        '200':
+          description: Successful sample
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SampleSchema4'
+        '400':
+          $ref: '#/components/responses/InvalidRequest'
+      summary: Sample endpoint
+  /tenants/{tenantId}/sample5/{id}:
+    get:
+      tags:
+        - Sample
+      operationId: getSample5
+      description: A sample path
+      parameters:
+        - $ref: '#/components/parameters/tenantIdPathParam'
+        - $ref: '#/components/parameters/SampleId'
+      responses:
+        '200':
+          description: Successful sample
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SampleSchema5'
+        '400':
+          $ref: '#/components/responses/InvalidRequest'
+      summary: Sample endpoint
+  /tenants/{tenantId}/sample6/{id}:
+    get:
+      tags:
+        - Sample
+      operationId: getSample6
+      description: A sample path
+      parameters:
+        - $ref: '#/components/parameters/tenantIdPathParam'
+        - $ref: '#/components/parameters/SampleId'
+      responses:
+        '200':
+          description: Successful sample
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SampleSchema6'
+        '400':
+          $ref: '#/components/responses/InvalidRequest'
+      summary: Sample endpoint
+tags:
+  - name: Sample
+    description: Sample tag

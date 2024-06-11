@@ -1,0 +1,36 @@
+type: object
+description: Sample object
+required:
+  - id
+properties:
+  id:
+    $ref: '../../openapi.yaml#/components/schemas/idProperty'
+  value:
+    type: string
+    minLength: 1
+    description: Sample value
+    example: 'Something'
+  subObjects:
+    type: integer
+    items:
+      $ref: '../../openapi.yaml#/components/schemas/SubObject'
+  subObjects2:
+    type: integer
+    items:
+      $ref: '../../openapi.yaml#/components/schemas/SubObject'
+  subObjects3:
+    type: integer
+    items:
+      $ref: '../../openapi.yaml#/components/schemas/SubObject'
+  subObjects4:
+    type: integer
+    items:
+      $ref: '../../openapi.yaml#/components/schemas/SubObject'
+  subObjects5:
+    type: integer
+    items:
+      $ref: '../../openapi.yaml#/components/schemas/SubObject'
+  subObjects6:
+    type: integer
+    items:
+      $ref: '../../openapi.yaml#/components/schemas/SubObject'

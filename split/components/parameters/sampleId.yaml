@@ -1,0 +1,7 @@
+name: id
+in: path
+required: true
+description: Sample ID
+schema:
+  type: number
+  format: int64

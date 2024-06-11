@@ -1,0 +1,18 @@
+type: object
+description: Sub-object
+required:
+  - id
+  - weight
+properties:
+  id:
+    $ref: '../../openapi.yaml#/components/schemas/idProperty'
+  weight:
+    type: integer
+    format: int32
+    description: Object weight
+    minimum: 1
+    maximum: 1000
+    example: 42
+  comment:
+    type: string
+    description: Comment

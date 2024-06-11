@@ -1,0 +1,52 @@
+openapi: 3.0.3
+components:
+  parameters:
+    SampleId:
+      $ref: ./components/parameters/sampleId.yaml
+    tenantIdPathParam:
+      $ref: ./components/parameters/tenantIdPathParam.yaml
+  responses:
+    InvalidRequest:
+      $ref: ./components/responses/InvalidRequest.yaml
+  schemas:
+    idProperty:
+      $ref: ./components/schemas/idProperty.yaml
+    ErrorSchema:
+      $ref: ./components/schemas/ErrorSchema.yaml
+    SampleSchema:
+      $ref: ./components/schemas/SampleSchema.yaml
+    SampleSchema2:
+      $ref: ./components/schemas/SampleSchema2.yaml
+    SampleSchema3:
+      $ref: ./components/schemas/SampleSchema3.yaml
+    SampleSchema4:
+      $ref: ./components/schemas/SampleSchema4.yaml
+    SampleSchema5:
+      $ref: ./components/schemas/SampleSchema5.yaml
+    SampleSchema6:
+      $ref: ./components/schemas/SampleSchema6.yaml
+    SubObject:
+      $ref: ./components/schemas/SubObject.yaml
+info:
+  title: Sample API
+  description: PoC of $ref problem with Spectral
+  version: '1.0.0'
+  contact:
+    name: Sample contact
+    email: sample@example.com
+paths:
+  /tenants/{tenantId}/sample/{id}:
+    $ref: ./paths/sample-byId.yaml
+  /tenants/{tenantId}/sample2/{id}:
+    $ref: ./paths/sample2-byId.yaml
+  /tenants/{tenantId}/sample3/{id}:
+    $ref: ./paths/sample3-byId.yaml
+  /tenants/{tenantId}/sample4/{id}:
+    $ref: ./paths/sample4-byId.yaml
+  /tenants/{tenantId}/sample5/{id}:
+    $ref: ./paths/sample5-byId.yaml
+  /tenants/{tenantId}/sample6/{id}:
+    $ref: ./paths/sample6-byId.yaml
+tags:
+  - name: Sample
+    description: Sample tag

@@ -1,0 +1,4 @@
+type: string
+format: uuid
+description: Object ID
+example: 5ed32d90-f210-4051-ad27-9ce08f13c737

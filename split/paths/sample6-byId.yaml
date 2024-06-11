@@ -1,0 +1,18 @@
+get:
+  tags:
+    - Sample
+  operationId: getSample6
+  description: A sample path
+  parameters:
+    - $ref: '../openapi.yaml#/components/parameters/tenantIdPathParam'
+    - $ref: '../openapi.yaml#/components/parameters/SampleId'
+  responses:
+    '200':
+      description: Successful sample
+      content:
+        application/json:
+          schema:
+            $ref: '../openapi.yaml#/components/schemas/SampleSchema6'
+    '400':
+      $ref: '../openapi.yaml#/components/responses/InvalidRequest'
+  summary: Sample endpoint

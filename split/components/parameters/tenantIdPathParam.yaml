@@ -1,0 +1,13 @@
+name: tenantId
+in: path
+required: true
+description: Functional identifier of the current tenant
+schema:
+  type: string
+  pattern: '^[a-z]{3}[a-z0-9]{5}$'
+  example: 'dev7a3bw'
+  description: >-
+    The tenant ID should be a 8-character random value following this REGEX pattern: `^[a-z]{3}[a-z0-9]{5}$`.
+    See https://odigo.atlassian.net/wiki/spaces/OCC/pages/4343267994/6.0+Which+tenant+ID+format+would+be+more+appropriate
+    for details.
+    **Note:** pattern _may_ be not respected on dev or test environments, it _should_ be OK on QA and runtime ones.
